@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Free Cloud & AI Resources | Sip And Cloud Tech</title>
+  <meta name="description" content="Kickstart your cloud journey with free career quizzes, checklists, hands-on projects, and community resources from Sip And Cloud Tech." />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: #f8fafc;
+      color: #0f172a;
+      line-height: 1.5;
+    }
+
+    /* Top banner */
+    .top-banner {
+      background: linear-gradient(90deg, #7c3aed, #a855f7);
+      color: white;
+      text-align: center;
+      padding: 10px 16px;
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    /* Navigation */
+    nav {
+      background: white;
+      border-bottom: 1px solid #e2e8f0;
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .logo {
+      font-weight: 700;
+      font-size: 18px;
+      color: #0f172a;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .logo span {
+      background: linear-gradient(135deg, #0d9488, #7c3aed);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #475569;
+      font-size: 15px;
+      font-weight: 500;
+    }
+
+    .nav-links a:hover {
+      color: #0d9488;
+    }
+
+    /* Hero */
+    .hero {
+      background: linear-gradient(180deg, #f0f9ff 0%, #f8fafc 100%);
+      padding: 64px 24px 48px;
+      text-align: center;
+    }
+
+    .hero-icon {
+      font-size: 48px;
+      margin-bottom: 16px;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #e0f2fe;
+      color: #0369a1;
+      font-size: 13px;
+      font-weight: 600;
+      padding: 6px 14px;
+      border-radius: 9999px;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      font-size: 40px;
+      font-weight: 800;
+      color: #0f172a;
+      margin-bottom: 16px;
+      letter-spacing: -0.5px;
+    }
+
+    .hero p {
+      font-size: 18px;
+      color: #475569;
+      max-width: 640px;
+      margin: 0 auto 32px;
+      line-height: 1.6;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: center;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 22px;
+      border-radius: 10px;
+      font-size: 15px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+
+    .btn-primary {
+      background: #0d9488;
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: #0f766e;
+    }
+
+    .btn-outline {
+      background: white;
+      color: #475569;
+      border: 1px solid #e2e8f0;
+    }
+
+    .btn-outline:hover {
+      border-color: #0d9488;
+      color: #0d9488;
+    }
+
+    /* Steps */
+    .steps {
+      max-width: 1000px;
+      margin: 0 auto 48px;
+      padding: 0 24px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+    }
+
+    .step-card {
+      background: white;
+      border: 1px solid #e2e8f0;
+      border-radius: 14px;
+      padding: 20px;
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+    }
+
+    .step-number {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 16px;
+      color: white;
+      flex-shrink: 0;
+    }
+
+    .step-1 { background: #7c3aed; }
+    .step-2 { background: #0d9488; }
+    .step-3 { background: #059669; }
+
+    .step-card h3 {
+      font-size: 14px;
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 2px;
+    }
+
+    .step-card p {
+      font-size: 13px;
+      color: #64748b;
+    }
+
+    /* Cards Section */
+    .cards-section {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px 80px;
+    }
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+    }
+
+    /* Resource Card */
+    .resource-card {
+      background: white;
+      border-radius: 16px;
+      padding: 28px 24px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+      border: 1px solid #f1f5f9;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 20px;
+    }
+
+    .card-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      font-weight: 600;
+    }
+
+    .icon-blue { background: #e0f2fe; color: #0284c7; }
+    .icon-teal { background: #ccfbf1; color: #0d9488; }
+    .icon-purple { background: #f3e8ff; color: #7c3aed; }
+    .icon-pink { background: #fce7f3; color: #db2777; }
+    .icon-amber { background: #fef3c7; color: #d97706; }
+    .icon-green { background: #dcfce7; color: #16a34a; }
+
+    .card-badge {
+      font-size: 12px;
+      font-weight: 600;
+      padding: 6px 12px;
+      border-radius: 9999px;
+      white-space: nowrap;
+    }
+
+    .badge-teal { background: #ccfbf1; color: #0f766e; }
+    .badge-blue { background: #e0f2fe; color: #0369a1; }
+    .badge-purple { background: #f3e8ff; color: #6d28d9; }
+    .badge-pink { background: #fce7f3; color: #be185d; }
+    .badge-amber { background: #fef3c7; color: #b45309; }
+    .badge-green { background: #dcfce7; color: #15803d; }
+
+    .resource-card h3 {
+      font-size: 19px;
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 12px;
+      line-height: 1.3;
+    }
+
+    .resource-card > p {
+      font-size: 15px;
+      color: #475569;
+      line-height: 1.55;
+      margin-bottom: 20px;
+      flex-grow: 1;
+    }
+
+    .benefits {
+      list-style: none;
+      margin-bottom: 24px;
+    }
+
+    .benefits li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin-bottom: 10px;
+      font-size: 14px;
+      color: #334155;
+    }
+
+    .benefits li span {
+      color: #10b981;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .card-btn {
+      display: block;
+      text-align: center;
+      padding: 14px 20px;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 15px;
+      text-decoration: none;
+      color: white;
+      transition: background 0.2s;
+    }
+
+    .btn-teal { background: #0d9488; }
+    .btn-teal:hover { background: #0f766e; }
+    .btn-blue { background: #0284c7; }
+    .btn-blue:hover { background: #0369a1; }
+    .btn-purple { background: #7c3aed; }
+    .btn-purple:hover { background: #6d28d9; }
+    .btn-pink { background: #db2777; }
+    .btn-pink:hover { background: #be185d; }
+    .btn-amber { background: #d97706; }
+    .btn-amber:hover { background: #b45309; }
+    .btn-green { background: #16a34a; }
+    .btn-green:hover { background: #15803d; }
+
+    /* Footer CTA */
+    .footer-cta {
+      background: #0f172a;
+      color: white;
+      text-align: center;
+      padding: 64px 24px;
+    }
+
+    .footer-cta h2 {
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .footer-cta p {
+      color: #94a3b8;
+      margin-bottom: 28px;
+      max-width: 520px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .footer-cta .btn-primary {
+      background: #0d9488;
+    }
+
+    /* Site Footer */
+    footer {
+      background: #0f172a;
+      color: #94a3b8;
+      padding: 40px 24px 24px;
+      border-top: 1px solid #1e293b;
+    }
+
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 32px;
+    }
+
+    .footer-brand {
+      max-width: 280px;
+    }
+
+    .footer-brand strong {
+      color: white;
+      font-size: 16px;
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 48px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links h4 {
+      color: white;
+      font-size: 14px;
+      margin-bottom: 12px;
+    }
+
+    .footer-links a {
+      display: block;
+      color: #94a3b8;
+      text-decoration: none;
+      font-size: 14px;
+      margin-bottom: 8px;
+    }
+
+    .footer-links a:hover {
+      color: #0d9488;
+    }
+
+    .copyright {
+      max-width: 1100px;
+      margin: 32px auto 0;
+      padding-top: 24px;
+      border-top: 1px solid #1e293b;
+      font-size: 13px;
+      text-align: center;
+    }
+
+    @media (max-width: 640px) {
+      .hero h1 {
+        font-size: 30px;
+      }
+      .nav-links {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Banner -->
+  <div class="top-banner">
+    Happy Cloud, Happy Explorers • Free resources for African builders
+  </div>
+
+  <!-- Navigation -->
+  <nav>
+    <a href="https://sipandcloud.co.za" class="logo">
+      <span>Sip And Cloud Tech</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="https://sipandcloud.co.za">Home</a></li>
+      <li><a href="https://sipandcloud.co.za">About</a></li>
+      <li><a href="https://sipandcloud.co.za">Services</a></li>
+      <li><a href="#">Free Resources</a></li>
+      <li><a href="https://sipandcloud.co.za">Join Community</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-icon">☁️</div>
+    <div class="hero-badge">✦ 100% Free • No Credit Card Required</div>
+    <h1>Free Cloud & AI Resources</h1>
+    <p>
+      Kickstart your cloud journey with free career assessments, study checklists,
+      a hands-on AWS mini-project, and community resources made for African explorers.
+    </p>
+    <div class="hero-buttons">
+      <a href="#resources" class="btn btn-primary">All Free Resources</a>
+      <a href="cloud-fun-facts.html" class="btn btn-outline">Free Cloud Project</a>
+      <a href="#checklist" class="btn btn-outline">90-Day Checklist</a>
+      <a href="#community" class="btn btn-outline">Join Community</a>
+    </div>
+  </section>
+
+  <!-- Steps -->
+  <div class="steps">
+    <div class="step-card">
+      <div class="step-number step-1">1</div>
+      <div>
+        <h3>STEP 1 • FIND YOUR DIRECTION</h3>
+        <p>Take the 60-Sec Career Quiz →</p>
+      </div>
+    </div>
+    <div class="step-card">
+      <div class="step-number step-2">2</div>
+      <div>
+        <h3>STEP 2 • FOLLOW A PLAN</h3>
+        <p>Grab a 90-Day PDF Checklist →</p>
+      </div>
+    </div>
+    <div class="step-card">
+      <div class="step-number step-3">3</div>
+      <div>
+        <h3>STEP 3 • GET HANDS-ON</h3>
+        <p>Build Your First Free Project →</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cards -->
+  <section class="cards-section" id="resources">
+    <div class="cards-grid">
+
+      <!-- Card 1: Career Quiz -->
+      <div class="resource-card">
+        <div class="card-header">
+          <div class="card-icon icon-blue">?</div>
+          <span class="card-badge badge-blue">Interactive Quiz • 60 Sec</span>
+        </div>
+        <h3>Cloud Career Role Quiz</h3>
+        <p>
+          Answer 15 quick questions to discover the cloud role that best matches your strengths, interests, and goals.
+        </p>
+        <ul class="benefits">
+          <li><span>✓</span> Discover your best-fit cloud career path</li>
+          <li><span>✓</span> Instant results with role recommendations</li>
+          <li><span>✓</span> Tailored roadmap for your #1 role match</li>
+        </ul>
+        <a href="#" class="card-btn btn-blue">Take the Free Quiz →</a>
+      </div>
+
+      <!-- Card 2: Free Project (main one) -->
+      <div class="resource-card" id="project">
+        <div class="card-header">
+          <div class="card-icon icon-teal">&lt;/&gt;</div>
+          <span class="card-badge badge-teal">Hands-On Project • Free</span>
+        </div>
+        <h3>Free Project: SACT Cloud Fun Facts Generator</h3>
+        <p>
+          Start your cloud journey with something fun. Build a mini-app that shares surprising cloud trivia using AWS services. Perfect first project for African explorers.
+        </p>
+        <ul class="benefits">
+          <li><span>✓</span> Beginner-friendly step-by-step lessons</li>
+          <li><span>✓</span> Hands-on serverless + GenAI architecture</li>
+          <li><span>✓</span> Great first cloud project for your portfolio</li>
+        </ul>
+        <a href="cloud-fun-facts.html" class="card-btn btn-teal">Start Free Project →</a>
+      </div>
+
+      <!-- Card 3: 90-Day Checklist -->
+      <div class="resource-card" id="checklist">
+        <div class="card-header">
+          <div class="card-icon icon-purple">📋</div>
+          <span class="card-badge badge-purple">Free PDF Roadmap</span>
+        </div>
+        <h3>90-Day Cloud Engineer Checklist</h3>
+        <p>
+          A clear week-by-week plan to build core cloud skills, complete projects, and stay accountable on your journey.
+        </p>
+        <ul class="benefits">
+          <li><span>✓</span> Clear 12-week study and project plan</li>
+          <li><span>✓</span> Key cloud engineering milestones to hit</li>
+          <li><span>✓</span> Printable PDF tracker to stay accountable</li>
+        </ul>
+        <a href="#" class="card-btn btn-purple">Get Free Checklist →</a>
+      </div>
+
+      <!-- Card 4: Solutions Architect Checklist -->
+      <div class="resource-card">
+        <div class="card-header">
+          <div class="card-icon icon-blue">🏗️</div>
+          <span class="card-badge badge-blue">Free PDF Roadmap</span>
+        </div>
+        <h3>90-Day Solutions Architect Checklist</h3>
+        <p>
+          Map out your 90-day Solutions Architect study plan with clear weekly milestones and progress tracking.
+        </p>
+        <ul class="benefits">
+          <li><span>✓</span> Structured architecture learning milestones</li>
+          <li><span>✓</span> Week-by-week study and build pacing</li>
+          <li><span>✓</span> Printable PDF checklist for daily progress</li>
+        </ul>
+        <a href="#" class="card-btn btn-blue">Get Free Checklist →</a>
+      </div>
+
+      <!-- Card 5: Community / Podcast -->
+      <div class="resource-card" id="community">
+        <div class="card-header">
+          <div class="card-icon icon-pink">🎙️</div>
+          <span class="card-badge badge-pink">Podcast • Community</span>
+        </div>
+        <h3>Builders On Mic Podcast</h3>
+        <p>
+          Real stories from African builders, founders, and cloud explorers. Learn from people who started where you are.
+        </p>
+        <ul class="benefits">
+          <li><span>✓</span> Founder and builder stories from Africa</li>
+          <li><span>✓</span> Practical cloud & AI insights</li>
+          <li><span>✓</span> Motivation and real talk for explorers</li>
+        </ul>
+        <a href="https://www.youtube.com/@sipandcloud" class="card-btn btn-pink" target="_blank">Watch Episodes →</a>
+      </div>
+
+      <!-- Card 6: Community WhatsApp -->
+      <div class="resource-card">
+        <div class="card-header">
+          <div class="card-icon icon-green">💬</div>
+          <span class="card-badge badge-green">Community • Free</span>
+        </div>
+        <h3>Sip & Cloud Community</h3>
+        <p>
+          Join a warm community of African cloud and AI explorers. Ask questions, share wins, and grow together.
+        </p>
+        <ul class="benefits">
+          <li><span>✓</span> Supportive space for beginners and builders</li>
+          <li><span>✓</span> Weekly tips, resources and opportunities</li>
+          <li><span>✓</span> Happy Cloud, Happy Explorers energy</li>
+        </ul>
+        <a href="https://sipandcloud.co.za" class="card-btn btn-green">Join the Movement →</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer CTA -->
+  <section class="footer-cta">
+    <h2>Ready to turn curiosity into capability?</h2>
+    <p>
+      Explore free resources, join the community, or book a free 30-minute call with the Sip And Cloud Tech team.
+    </p>
+    <a href="https://sipandcloud.co.za" class="btn btn-primary">Visit Sip And Cloud Tech →</a>
+  </section>
+
+  <!-- Site Footer -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <strong>Sip And Cloud Tech</strong>
+        Empowering Africa through Cloud & AI. Happy Cloud, Happy Explorers.
+      </div>
+      <div class="footer-links">
+        <div>
+          <h4>Quick Links</h4>
+          <a href="https://sipandcloud.co.za">Home</a>
+          <a href="https://sipandcloud.co.za">About</a>
+          <a href="https://sipandcloud.co.za">Services</a>
+          <a href="#">Free Resources</a>
+        </div>
+        <div>
+          <h4>Connect</h4>
+          <a href="https://www.youtube.com/@sipandcloud">YouTube</a>
+          <a href="https://sipandcloud.co.za">Join Community</a>
+          <a href="mailto:info@sipandcloud.co.za">info@sipandcloud.co.za</a>
+        </div>
+      </div>
+    </div>
+    <div class="copyright">
+      © 2024–2026 Sip & Cloud Tech (Pty) Ltd · sipandcloud.co.za · All rights reserved.
+    </div>
+  </footer>
+
+</body>
+</html>

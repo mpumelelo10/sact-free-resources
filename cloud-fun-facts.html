@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Free Project: SACT Cloud Fun Facts Generator | Sip And Cloud Tech</title>
+  <meta name="description" content="Start your cloud journey with something fun. Build a free mini-app that shares surprising cloud trivia using AWS services. Made for African explorers by Sip And Cloud Tech." />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: #f8fafc;
+      color: #0f172a;
+      line-height: 1.5;
+    }
+
+    /* Top banner */
+    .top-banner {
+      background: linear-gradient(90deg, #7c3aed, #a855f7);
+      color: white;
+      text-align: center;
+      padding: 10px 16px;
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    /* Nav */
+    nav {
+      background: white;
+      border-bottom: 1px solid #e2e8f0;
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .logo {
+      font-weight: 700;
+      font-size: 18px;
+      color: #0f172a;
+      text-decoration: none;
+    }
+    .logo span {
+      background: linear-gradient(135deg, #0d9488, #7c3aed);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: #475569;
+      font-size: 15px;
+      font-weight: 500;
+    }
+    .nav-links a:hover { color: #0d9488; }
+
+    /* Hero */
+    .hero {
+      background: linear-gradient(180deg, #f0f9ff 0%, #f8fafc 100%);
+      padding: 56px 24px 48px;
+    }
+    .hero-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+    .hero-content h1 {
+      font-size: 36px;
+      font-weight: 800;
+      color: #0f172a;
+      margin-bottom: 16px;
+      line-height: 1.2;
+      letter-spacing: -0.5px;
+    }
+    .hero-content p {
+      font-size: 17px;
+      color: #475569;
+      margin-bottom: 20px;
+      line-height: 1.6;
+    }
+    .enrolments {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 15px;
+      color: #64748b;
+      margin-bottom: 28px;
+    }
+    .btn {
+      display: inline-block;
+      padding: 14px 28px;
+      border-radius: 10px;
+      font-size: 16px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    .btn-primary {
+      background: #0d9488;
+      color: white;
+    }
+    .btn-primary:hover { background: #0f766e; }
+
+    .hero-image {
+      background: linear-gradient(135deg, #0d9488, #7c3aed);
+      border-radius: 20px;
+      padding: 40px 32px;
+      color: white;
+      text-align: center;
+      box-shadow: 0 20px 40px rgba(13, 148, 136, 0.25);
+    }
+    .hero-image .badge {
+      display: inline-block;
+      background: white;
+      color: #0d9488;
+      font-weight: 800;
+      font-size: 14px;
+      padding: 6px 14px;
+      border-radius: 6px;
+      margin-bottom: 16px;
+      letter-spacing: 0.5px;
+    }
+    .hero-image h2 {
+      font-size: 28px;
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 8px;
+    }
+    .hero-image .sub {
+      font-size: 15px;
+      opacity: 0.9;
+    }
+
+    /* Course content */
+    .content-section {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+    }
+    .content-section h2 {
+      font-size: 24px;
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 24px;
+      text-align: center;
+    }
+    .lesson-list {
+      background: white;
+      border-radius: 16px;
+      border: 1px solid #e2e8f0;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+    }
+    .lesson-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 24px;
+      border-bottom: 1px solid #f1f5f9;
+      font-size: 16px;
+      color: #334155;
+      font-weight: 500;
+    }
+    .lesson-item:last-child { border-bottom: none; }
+    .lesson-item:hover { background: #f8fafc; }
+    .lesson-number {
+      color: #0d9488;
+      font-weight: 700;
+      margin-right: 12px;
+    }
+    .lesson-arrow {
+      color: #94a3b8;
+      font-size: 18px;
+    }
+
+    /* CTA box */
+    .cta-box {
+      background: white;
+      border: 1px solid #e2e8f0;
+      border-radius: 16px;
+      padding: 40px 32px;
+      text-align: center;
+      margin-top: 48px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+    }
+    .cta-box h3 {
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .cta-box p {
+      color: #64748b;
+      margin-bottom: 24px;
+    }
+    .price {
+      font-size: 28px;
+      font-weight: 800;
+      color: #0d9488;
+      margin-bottom: 4px;
+    }
+    .price-note {
+      font-size: 14px;
+      color: #94a3b8;
+      margin-bottom: 24px;
+    }
+
+    /* Services used */
+    .services {
+      max-width: 800px;
+      margin: 0 auto 48px;
+      padding: 0 24px;
+      text-align: center;
+    }
+    .services h3 {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 16px;
+      color: #0f172a;
+    }
+    .service-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+    }
+    .service-tag {
+      background: #f1f5f9;
+      color: #334155;
+      font-size: 13px;
+      font-weight: 600;
+      padding: 8px 14px;
+      border-radius: 9999px;
+    }
+
+    /* Footer */
+    footer {
+      background: #0f172a;
+      color: #94a3b8;
+      padding: 40px 24px 24px;
+      text-align: center;
+    }
+    footer strong {
+      color: white;
+      display: block;
+      margin-bottom: 8px;
+    }
+    footer a {
+      color: #0d9488;
+      text-decoration: none;
+    }
+    .copyright {
+      margin-top: 24px;
+      font-size: 13px;
+      border-top: 1px solid #1e293b;
+      padding-top: 20px;
+    }
+
+    @media (max-width: 768px) {
+      .hero-inner {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+      .hero-content h1 { font-size: 28px; }
+      .nav-links { display: none; }
+      .enrolments { justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="top-banner">
+    Happy Cloud, Happy Explorers • Free project for African builders
+  </div>
+
+  <nav>
+    <a href="https://sipandcloud.co.za" class="logo">
+      <span>Sip And Cloud Tech</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="https://sipandcloud.co.za">Home</a></li>
+      <li><a href="index.html">Free Resources</a></li>
+      <li><a href="https://sipandcloud.co.za">Join Community</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-content">
+        <h1>Free Project: SACT Cloud Fun Facts Generator</h1>
+        <p>
+          Start your cloud journey with something fun. The Cloud Fun Facts Generator is a free mini-project where you’ll create an app that shares surprising cloud trivia. AWS services used include DynamoDB, Bedrock, Lambda and more.
+        </p>
+        <div class="enrolments">
+          <span>☁️</span>
+          <span>Perfect first project for African explorers</span>
+        </div>
+        <a href="#start" class="btn btn-primary">Get Started Free</a>
+      </div>
+      <div class="hero-image">
+        <div class="badge">FREE PROJECT</div>
+        <h2>SACT CLOUD<br>FUN FACTS<br>GENERATOR</h2>
+        <p class="sub">Sip And Cloud Tech</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <div class="services">
+    <h3>What you’ll work with</h3>
+    <div class="service-tags">
+      <span class="service-tag">AWS Lambda</span>
+      <span class="service-tag">API Gateway</span>
+      <span class="service-tag">DynamoDB</span>
+      <span class="service-tag">Amazon Bedrock</span>
+      <span class="service-tag">AWS Amplify</span>
+      <span class="service-tag">IAM</span>
+    </div>
+  </div>
+
+  <!-- Course Content -->
+  <section class="content-section" id="start">
+    <h2>Project Content</h2>
+    <div class="lesson-list">
+      <div class="lesson-item">
+        <div>
+          <span class="lesson-number">1.</span>
+          Introduction
+        </div>
+        <span class="lesson-arrow">›</span>
+      </div>
+      <div class="lesson-item">
+        <div>
+          <span class="lesson-number">2.</span>
+          Project Overview
+        </div>
+        <span class="lesson-arrow">›</span>
+      </div>
+      <div class="lesson-item">
+        <div>
+          <span class="lesson-number">3.</span>
+          Basic Version (Lambda + API Gateway)
+        </div>
+        <span class="lesson-arrow">›</span>
+      </div>
+      <div class="lesson-item">
+        <div>
+          <span class="lesson-number">4.</span>
+          Database Version (DynamoDB + Lambda)
+        </div>
+        <span class="lesson-arrow">›</span>
+      </div>
+      <div class="lesson-item">
+        <div>
+          <span class="lesson-number">5.</span>
+          GenAI Version (Make Facts Witty with Bedrock)
+        </div>
+        <span class="lesson-arrow">›</span>
+      </div>
+      <div class="lesson-item">
+        <div>
+          <span class="lesson-number">6.</span>
+          Add a Frontend with AWS Amplify
+        </div>
+        <span class="lesson-arrow">›</span>
+      </div>
+      <div class="lesson-item">
+        <div>
+          <span class="lesson-number">7.</span>
+          Conclusion and Resource Cleanup
+        </div>
+        <span class="lesson-arrow">›</span>
+      </div>
+      <div class="lesson-item">
+        <div>
+          <span class="lesson-number">8.</span>
+          Congratulations! You Did It!
+        </div>
+        <span class="lesson-arrow">›</span>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="cta-box">
+      <div class="price">Free</div>
+      <p class="price-note">No payment required • Lifetime access</p>
+      <h3>Ready to start learning?</h3>
+      <p>Build your first real AWS project and add it to your portfolio.</p>
+      <a href="https://sipandcloud.co.za" class="btn btn-primary">Get Started Free</a>
+    </div>
+  </section>
+
+  <footer>
+    <strong>Sip And Cloud Tech</strong>
+    Empowering Africa through Cloud & AI. Happy Cloud, Happy Explorers.
+    <br><br>
+    <a href="https://sipandcloud.co.za">sipandcloud.co.za</a> · 
+    <a href="mailto:info@sipandcloud.co.za">info@sipandcloud.co.za</a>
+    <div class="copyright">
+      © 2024–2026 Sip & Cloud Tech (Pty) Ltd · All rights reserved.
+    </div>
+  </footer>
+
+</body>
+</html>
